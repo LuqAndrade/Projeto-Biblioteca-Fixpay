@@ -164,50 +164,68 @@
                             <td data-label="Data de Devolução">30/09</td>
                             <td data-label="Status"> <button class="status-btn pending">Pendente</button></td>
                             <td data-label="Ações">
-                                <i class="edit bi bi-pencil-fill"></i>
-                                <i class="book bi bi-file-check-fill"></i>
-                                <i class="trash bi bi-trash3-fill"></i>
-                            </td>
-                        </tr>
 
-                        <tr>
-                            <td data-label="ID">2</td>
-                            <td data-label="Livro">Game of Thrones</td>
-                            <td data-label="Usuário">Sabrine Marques</td>
-                            <td data-label="Data do Aluguel">10/09</td>
-                            <td data-label="Data de Devolução">30/09</td>
-                            <td data-label="Status"><button class="status-btn ontime">No Prazo</button></td>
-                            <td data-label="Ações">
-                                <i class="edit bi bi-pencil-fill"></i>
-                                <i class="book bi bi-file-check-fill"></i>
-                                <i class="trash bi bi-trash3-fill"></i>
-                            </td>
-                        </tr>
+                                <button id="open-modal-editar">editar</button>
 
-                        <tr>
-                            <td data-label="ID">3</td>
-                            <td data-label="Livro">A Menina que roubava livros</td>
-                            <td data-label="Usuário">Ronald Alves</td>
-                            <td data-label="Data do Aluguel">01/09</td>
-                            <td data-label="Data de Devolução">30/09</td>
-                            <td data-label="Status"><button class="status-btn late">Atrasado</button></td>
-                            <td data-label="Ações">
-                                <i class="edit bi bi-pencil-fill"></i>
-                                <i class="book bi bi-file-check-fill"></i>
-                                <i class="trash bi bi-trash3-fill"></i>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="bottom-field">
-                    <ul class="pagination">
-                        <li class="prev"><a href="#" id="prev">&#139;</a></li>
-                        <!-- page number here -->
-                        <li class="next"><a href="#" id="next">&#155;</a></li>
-                    </ul>
-                </div>
-            </section>
+
         </div>
+
+
+        <i class="book bi bi-file-check-fill"></i>
+        <i class="trash bi bi-trash3-fill"></i>
+        </td>
+        </tr>
+
+        <tr>
+            <td data-label="ID">2</td>
+            <td data-label="Livro">Game of Thrones</td>
+            <td data-label="Usuário">Sabrine Marques</td>
+            <td data-label="Data do Aluguel">10/09</td>
+            <td data-label="Data de Devolução">30/09</td>
+            <td data-label="Status"><button class="status-btn ontime">No Prazo</button></td>
+            <td data-label="Ações">
+                <i class="edit bi bi-pencil-fill"></i>
+                <i class="book bi bi-file-check-fill"></i>
+                <i class="trash bi bi-trash3-fill"></i>
+            </td>
+        </tr>
+
+        <tr>
+            <td data-label="ID">3</td>
+            <td data-label="Livro">A Menina que roubava livros</td>
+            <td data-label="Usuário">Ronald Alves</td>
+            <td data-label="Data do Aluguel">01/09</td>
+            <td data-label="Data de Devolução">30/09</td>
+            <td data-label="Status"><button class="status-btn late">Atrasado</button></td>
+            <td data-label="Ações">
+                <i class="edit bi bi-pencil-fill"></i>
+                <i class="book bi bi-file-check-fill"></i>
+                <i class="trash bi bi-trash3-fill"></i>
+            </td>
+        </tr>
+        </tbody>
+        </table>
+        <div class="bottom-field">
+            <ul class="pagination">
+                <li class="prev"><a href="#" id="prev">&#139;</a></li>
+                <!-- page number here -->
+                <li class="next"><a href="#" id="next">&#155;</a></li>
+            </ul>
+        </div>
+        </section>
+        </div>
+
+        <div id="fade" class="hide"></div>
+        <div id="modal" class="hide">
+            <div class="modal-header">
+                <h2>CADASTRE AQUI</h2>
+                <button id="close-modal">Fechar</button>
+            </div>
+            <div class="modal-body">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae magni labore nisi itaque a modi
+                    quidem iste vero, aperiam laborum minima harum blanditiis maxime illum vel non facere rerum!
+                    Tempora.</p>
+            </div>
     </main>
 
 

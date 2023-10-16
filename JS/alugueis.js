@@ -1,3 +1,5 @@
+
+//paginação
 var tbody = document.querySelector("tbody");
 		var pageUl = document.querySelector(".pagination");
 		var itemShow = document.querySelector("#itemperpage");
@@ -117,3 +119,21 @@ var tbody = document.querySelector("tbody");
 				}
 			}
 		}
+
+        /*modal de editar*/
+        const openModalButton = document.querySelector("#open-modal");  /*botao de abrir o modal*/
+        const closeModalButton = document.querySelector("#close-modal");  /*botao de fechar o modal */
+        const modal = document.querySelector("#modal");  /*modal em si*/
+        const fade = document.querySelector("#fade");  /*background transparente */
+
+const toggleModal = () =>{
+    modal.classList.toggle("hide");
+    fade.classList.toggle("hide");
+}
+
+        //criaremos um array agora
+        [openModalButton, closeModalButton, fade].forEach((el) => {
+            el.addEventListener("click" , () => toggleModal());
+        })
+
+        
