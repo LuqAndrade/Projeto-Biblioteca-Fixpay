@@ -273,14 +273,85 @@ body.dark .switch::before {
     left: 25px;
 }
 
-.sidebar.close~.alugueis-container {
+.sidebar.close~main {
     left: 88px;
     width: calc(100% - 88px);
 }
 
 /*FINAL DA SIDEBAR*/
+
+/*menu responsivo*/
+.button-mobile {
+    display: none;
+    align-items: flex-start;
+    align-items: center;
+    margin: 16px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #18191A;
+    border: 0;
+   
+}
+
+.menu-mobile-active {
+    width: 100%;
+    height: 100%;
+    background-color: #13508d;
+    z-index: 99;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+}
+
+.menu-mobile-active button {
+    background: transparent;
+    border: 0;
+    color: #FFF;
+    margin-bottom: 16px;
+}
+
+.mobile-text {
+    text-decoration: none;
+    font-size: 22px;
+    margin-left: 10px;
+}
+
+.mobile-text a {
+    text-decoration: none;
+}
+.menu-mobile-active button > span {
+    display: inline-flex;
+    align-items: center;
+}
+
+.menu-mobile {
+    display: none;
+}
+
+.close-button{
+    position: fixed;
+    top: 30px; /* Ajuste a margem superior desejada */
+    left: 30px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.close-button:hover{
+   color:#00bfff;
+   transition:0.4s
+
+}
+
+
+
 /*conteudo principal*/
-.alugueis-container {
+main {
     position: relative;
     background: #ebe9e9;
     padding: 1rem;
@@ -305,7 +376,7 @@ body.dark .switch::before {
 
 }
 
-/*paginaçao em cima, o input de pesquisar*/
+/*Paginaçao acima,  input de pesquisar//////////////////////////////////////*/
 .cabecalho {
     width: 90%;
     height: 100px;
@@ -485,7 +556,8 @@ select {
 
 /*atrasado,
 no prazo,
-pendente*/ .status-btn {
+pendente*/
+.status-btn {
     width: 120px;
     /* Define a largura do botão */
     height: 40px;
@@ -526,7 +598,35 @@ pendente*/ .status-btn {
 }
 
 
+/*responsividade do menu*/
 
+@media (max-width: 550px) {
+    .sidebar.close {
+        display: none;
+    }
 
+    .sidebar {
+        display: none;
+    }
 
+   .button-mobile{
+    display: flex;
+   }
+    
+    .buttton-mobile span {
+        font-size: 18px;
+        margin-left: 8px;
+    }
 
+    .table-container{
+        background-color: none;
+    }
+    
+    main{
+        margin-left: -45px; 
+    }
+    
+    .header-mobile{
+        display: block;
+    }
+}

@@ -10,7 +10,7 @@
     <!--icone--->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="shortcut icon" type="imagex/png"
-        href="/Projeto-fixpay-leonardo/Imagens/biblioteca-fixpay-website-favicon-color_04_.ico">
+        href="/Imagens/biblioteca-fixpay-website-favicon-color_04_.ico">
     <!--css--->
     <link rel="stylesheet" href="/CSS/alugueis.css">
 
@@ -23,7 +23,8 @@
         <header>
             <div class="image-text">
                 <span class="image">
-                    <img src="/Projeto-fixpay-leonardo/Imagens/biblioteca-fixpay-website-favicon-color_04_.ico" alt="logo">
+                    <img src="/Imagens/biblioteca-fixpay-website-favicon-color_04_.ico"
+                        alt="logo">
                 </span>
 
                 <div class="text header-text">
@@ -40,7 +41,7 @@
 
                 <ul class="menu-links">
                     <li class="nav-link">
-                        <a href="/Projeto-fixpay-leonardo/HTML/Dashboard.html "><i class="bi bi-columns-gap icon"></i>
+                        <a href="/HTML/Dashboard.html "><i class="bi bi-columns-gap icon"></i>
                             <span class="text nav-text">Dashboard</span>
                         </a>
                     </li>
@@ -77,9 +78,49 @@
         </div>
     </nav>
 
+
+<!--Menu responsivo-->
+
+  <button class="button-mobile" onclick="iconMenu()">
+    <i class="bi bi-list"></i>
+    <span></span>
+  </button>
+
+
+
+
+
+<nav class="menu-mobile" id="menu-mobile">
+    
+    <button class="close-button" onclick="iconMenu()">
+        <span><i class="bi bi-x-circle-fill"></i></span>
+    </button>
+
+    <button>
+        <span>
+            <i class="bi bi-columns-gap icon"></i>
+            <span class="mobile-text"><a href="/HTML/Dashboard.html">Dashboard</a></span>
+        </span>
+    </button>
+
+    <button>
+        <span>
+            <i class="bi bi-journal-bookmark-fill icon"></i>
+           <span class="mobile-text"> <a href="/HTML/Alugueis.html">Alugueis</a></span>
+        </span>
+    </button>
+
+    <button>
+        <span>
+            <i class="bi bi-box-arrow-left icon"></i>
+            <span  class="mobile-text"><a href="">Logout</a></span>
+        </span>
+    </button>
+</nav>
+
     <!--toda a main de alugueis-->
 
-    <div class="alugueis-container">
+   <main>
         <div class="table-container">
             <div class="main-title">ALUGUÉIS
                 <a href="/HTML/modal.html fixpay/Formulario.html"><i class="bi bi-plus-circle-fill add-icone"></i> </a>
@@ -172,11 +213,11 @@
                 </div>
             </section>
         </div>
-    </div>
+    </main>
 
 
-    <script src="/Projeto-fixpay-leonardo/sidebar/sidebar.js"></script>
-    <script src="/Projeto-fixpay-leonardo/JS/alugueis.js"></script>
+    <script src="/sidebar/sidebar.js"></script>
+    <script src="/JS/alugueis.js"></script>
 </body>
 
 </html>
