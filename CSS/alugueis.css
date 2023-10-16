@@ -1,0 +1,532 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=Kanit:ital,wght@0,200;0,300;0,400;0,500;0,600;1,600&family=Montserrat:wght@100;200;300;400;500&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,200;1,400&family=Roboto:wght@300;400;500&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+}
+
+
+/*COMEÇO DA SIDEBAR*/
+:root {
+    /*===colors===*/
+    --body-color: #E4E9F7;
+    --sidebar-color: #FFF;
+    --primary-color: #13508d;
+    --primary-color-light: #F6F5FF;
+    --toggle-color: #DDD;
+    --text-color: #707070;
+
+    /*===TRANSITION===*/
+    --tran-03: all 0.2 ease;
+    --tran-03: all 0.3 ease;
+    --tran-04: all 0.4 ease;
+    --tran-05: all 0.5 ease;
+}
+
+body {
+    height: 100vh;
+    background: var(--body-color);
+    transition: var(--tran-05);
+}
+
+body.dark {
+    --body-color: #18191A;
+    --sidebar-color: #242526;
+    --primary-color: #3A3B3C;
+    --primary-color-light: #3A3B3C;
+    --toggle-color: #FFF;
+    --text-color: #CCC;
+}
+
+.sidebar.close header .toggle {
+    transform: rotate (180deg);
+
+}
+
+body.dark .sidebar header .toggle {
+    color: var(--text-color);
+}
+
+.sidebar.close hader .toggle {
+    transform: translateY(-50%);
+}
+
+.sidebar .text {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.sidebar .image {
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar .menu {
+    margin-top: 35px;
+}
+
+/*sidebar em si*/
+.sidebar {
+    box-shadow: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    padding: 10px 14px;
+    background: var(--sidebar-color);
+    transition: 0.4s;
+    white-space: nowrap;
+    opacity: 1;
+    z-index: 100;
+}
+
+.sidebar.close {
+    width: 88px;
+    box-shadow: 20px;
+}
+
+.sidebar.close .text {
+    opacity: 0;
+}
+
+.sidebar header {
+    position: relative;
+}
+
+/*imagem da side bar*/
+.sidebar .image-text img {
+    width: 40px;
+}
+
+.sidebar header .image-text {
+    display: flex;
+    align-items: center;
+}
+
+header .image-text .header-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-text .name {
+    font-weight: 600;
+}
+
+.header-text .profession {
+    margin-top: -2px;
+}
+
+.sidebar header .toggle {
+    position: absolute;
+    top: 50%;
+    right: -25px;
+
+    height: 25px;
+    width: 25px;
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--sidebar-color);
+    font-size: 22px;
+    transform: translateY(-50%) rorate(180deg);
+    transition: 0.3seg;
+}
+
+.sidebar li {
+    height: 50px;
+    margin-top: 10px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar li .icon {
+    font-size: 20px;
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar li .icon,
+.sidebar li .text {
+    color: var(--text-color);
+    transform: var(--tran-02);
+}
+
+.sidebar li a {
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    transition: var(--tran-04);
+}
+
+.sidebar li a:hover {
+    background: var(--primary-color);
+}
+
+.sidebar li a:hover .icon,
+.sidebar li a:hover .text {
+    color: var(--sidebar-color);
+}
+
+body.dark .sidebar li a:hover .icon,
+body.dark .sidebar li a:hover .text {
+    color: var(--text-color);
+}
+
+
+.sidebar .menu-bar {
+
+    height: calc(100% - 70px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-bar .mode {
+    border-radius: 6px;
+    position: relative;
+    background: var(--primary-color-light);
+}
+
+body.dark .menu-bar .mode i.sun {
+    opacity: 1;
+}
+
+
+body.dark .menu-bar .mode i.moon {
+    opacity: 0;
+}
+
+
+.menu-bar .mode i {
+    position: absolute;
+    transition: 0.3seg;
+}
+
+.menu-bar .mode .moon-sun {
+    height: 50px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-bar .mode i.sun {
+    opacity: 0;
+}
+
+.menu-bar .mode .toggle-switch {
+    position: absolute;
+    right: 0;
+    display: flex;
+    height: 100%;
+    min-width: 60px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: var(--primary-color-light);
+    border-radius: 6px;
+    transition: var(--tran-05);
+}
+
+.toggle-switch .switch {
+    position: relative;
+    height: 22px;
+    width: 44px;
+    border-radius: 25px;
+    background: var(--toggle-color);
+
+}
+
+.switch::before {
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    background: var(--sidebar-color);
+    transition: var(--tran-03);
+}
+
+body.dark .switch::before {
+    left: 25px;
+}
+
+.sidebar.close~.alugueis-container {
+    left: 88px;
+    width: calc(100% - 88px);
+}
+
+/*FINAL DA SIDEBAR*/
+/*conteudo principal*/
+.alugueis-container {
+    position: relative;
+    background: #ebe9e9;
+    padding: 1rem;
+    left: 250px;
+    height: 100vh;
+    width: calc(100% - 250px);
+}
+
+/*titulo container da tabela*/
+.table-container .main-title {
+    font-size: 25px;
+    font-weight: 500;
+    color: #1374d5;
+    padding: 8px 40px;
+}
+
+
+.table-container {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+
+}
+
+/*paginaçao em cima, o input de pesquisar*/
+.cabecalho {
+    width: 90%;
+    height: 100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.itens-controller,
+.search {
+    display: flex;
+    /* Define um layout flexível */
+    align-items: center;
+    /* Alinha os itens verticalmente */
+}
+
+/*botao da filtragem*/
+.bottom-field {
+    width: 100%;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+
+.itens-controller h5,
+.search h5,
+.itens-controller select,
+.search input {
+    margin-right: 10px;
+    /* Ajuste o valor conforme necessário */
+}
+
+/*botao de adiconar*/
+.add-btn {
+    color: #13508d;
+}
+
+.add-btn:hover {
+    color: #1374d5;
+}
+
+
+section[cabecalho] {
+    display: flex;
+    /* Define um layout flexível */
+    align-items: center;
+    /* Alinha os itens verticalmente */
+}
+
+
+select {
+    padding: 2px;
+    margin: 0 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+}
+
+
+
+/*tabela inteira*/
+.table-content {
+    background-color: #fff;
+    margin-top: 1rem;
+    border-radius: 10px;
+    padding: 5rem;
+}
+
+.table {
+    border-collapse: collapse;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/*colunas da tabela*/
+.table td,
+.table th {
+
+    padding: 25px 10px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.table th {
+    background-color: #13508d;
+    color: #ffffff;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+/*editar*/
+.edit {
+    color: blue;
+}
+
+/*apagar*/
+.trash {
+    color: red;
+}
+
+/*devolver*/
+.book {
+    color: green;
+}
+
+/*atrasado,no prazo, pendente*/
+.status-btn {
+    width: 120px;
+    /* Define a largura do botão */
+    height: 40px;
+    /* Define a altura do botão */
+    border-radius: 20px;
+    border: none;
+    font-weight: bold;
+}
+
+.main-title {
+    font-size: 20px;
+    font-weight: 450;
+    color: #1374d5;
+    margin-bottom: 8px;
+}
+
+
+/*responsividade da tabela*/
+@media(max-width: 855px) {
+    .table thead {
+        display: none;
+        /*caeçalho vai sumir quando a tela tiver essa largura*/
+    }
+
+    .table,
+    .table tbody,
+    .table tr,
+    .table td {
+        display: block;
+        width: 100%;
+    }
+
+    .table tr {
+        margin-bottom: 15px;
+    }
+
+    .table td {
+        text-align: right;
+        padding-left: 50%;
+        text-align: right;
+        position: relative;
+    }
+
+    .table td::before {
+        content: attr(data-label);
+        /*puxando  data label*/
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-size: 15px;
+        font-weight: bold;
+        text-align: left;
+    }
+}
+
+.add-icone {
+    color: #13508d;
+    cursor: pointer;
+
+}
+
+.add-icone:hover {
+    color: #1374d5;
+}
+
+/*atrasado,
+no prazo,
+pendente*/ .status-btn {
+    width: 120px;
+    /* Define a largura do botão */
+    height: 40px;
+    /* Define a altura do botão */
+    border-radius: 20px;
+    border: none;
+    font-weight: bold;
+}
+
+.late {
+    background-color: #f9553b;
+}
+
+.ontime {
+    background-color: #5ded5d;
+}
+
+.pending {
+    background-color: #f9de45;
+}
+
+/*paginaçao*/
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination li {
+    list-style: none;
+    padding: 2px;
+    margin: 10px;
+    flex-shrink: 0;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #999;
+    color: #999;
+}
+
+
+
+
+
+

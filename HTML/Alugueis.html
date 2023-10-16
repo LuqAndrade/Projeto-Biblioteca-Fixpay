@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--titulo-->
+    <title>Alugueis | Biblioteca FP</title>
+    <!--icone--->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="shortcut icon" type="imagex/png"
+        href="/Projeto-fixpay-leonardo/Imagens/biblioteca-fixpay-website-favicon-color_04_.ico">
+    <!--css--->
+    <link rel="stylesheet" href="/Projeto-fixpay-leonardo/CSS/alugueis.css">
+
+</head>
+
+<body>
+
+    <!--SIDEBAR-->
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="/Projeto-fixpay-leonardo/Imagens/biblioteca-fixpay-website-favicon-color_04_.ico" alt="logo">
+                </span>
+
+                <div class="text header-text">
+                    <span class="name">Biblioteca </span>
+                    <span class="profession">Fixpay</span>
+                </div>
+            </div>
+            <i class="bi bi-caret-right-fill toggle"></i>
+
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="/Projeto-fixpay-leonardo/HTML/Dashboard.html "><i class="bi bi-columns-gap icon"></i>
+                            <span class="text nav-text">Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#"><i class="bi bi-journal-bookmark-fill icon"></i>
+                            <span class="text nav-text">Aluguéis</span>
+                        </a>
+                    </li>
+
+                </ul>
+
+                <div class="bottom-content">
+                    <li class="">
+                        <a href="#"><i class="bi bi-box-arrow-left icon"></i>
+                            <span class="text nav-text">Logout</span>
+                        </a>
+                    </li>
+
+                    <li class="mode">
+                        <div class="moon-sun">
+                            <i class="bi bi-moon icon moon"></i>
+                            <i class="bi bi-brightness-high icon sun"></i>
+                        </div>
+                        <span class="mode-text text toggle-text">Modo Dark</span>
+
+                        <div class="toggle-switch">
+                            <span class="switch"></span>
+                        </div>
+                    </li>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!--toda a main de alugueis-->
+
+    <div class="alugueis-container">
+        <div class="table-container">
+            <div class="main-title">ALUGUÉIS
+                <a href="/HTML/modal.html fixpay/Formulario.html"><i class="bi bi-plus-circle-fill add-icone"></i> </a>
+            </div>
+
+
+            <section class="cabecalho">
+                <div class="itens-controller">
+                    <h5>SHOW</h5>
+                    <select>
+                        <option value="04">01</option>
+                        <option value="05">02</option>
+                        <option value="08">03</option>
+                        <option value="10">04</option>
+                        <option value="15">05</option>
+                    </select>
+                    <h5>PER PAGE</h5>
+                </div>
+                <div class="search">
+                    <h5>SEARCH</h5>
+                    <input type="text" name="" placeholder="Search">
+                </div>
+            </section>
+
+            <section class="field">
+                <table class="table">
+                    <thead>
+                        <th>ID</th>
+                        <th>Livro</th>
+                        <th>Usuário</th>
+                        <th> Data do Aluguel</th>
+                        <th>Data de Devolução</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td data-label="ID">1</td>
+                            <td data-label="Livro">Harry Potter e o Prisioneiro de Azkaban</td>
+                            <td data-label="Usuário">Leonardo Castro</td>
+                            <td data-label="Data do Aluguel">15/09</td>
+                            <td data-label="Data de Devolução">30/09</td>
+                            <td data-label="Status"> <button class="status-btn pending">Pendente</button></td>
+                            <td data-label="Ações">
+                                <i class="edit bi bi-pencil-fill"></i>
+                                <i class="book bi bi-file-check-fill"></i>
+                                <i class="trash bi bi-trash3-fill"></i>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td data-label="ID">2</td>
+                            <td data-label="Livro">Game of Thrones</td>
+                            <td data-label="Usuário">Sabrine Marques</td>
+                            <td data-label="Data do Aluguel">10/09</td>
+                            <td data-label="Data de Devolução">30/09</td>
+                            <td data-label="Status"><button class="status-btn ontime">No Prazo</button></td>
+                            <td data-label="Ações">
+                                <i class="edit bi bi-pencil-fill"></i>
+                                <i class="book bi bi-file-check-fill"></i>
+                                <i class="trash bi bi-trash3-fill"></i>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td data-label="ID">3</td>
+                            <td data-label="Livro">A Menina que roubava livros</td>
+                            <td data-label="Usuário">Ronald Alves</td>
+                            <td data-label="Data do Aluguel">01/09</td>
+                            <td data-label="Data de Devolução">30/09</td>
+                            <td data-label="Status"><button class="status-btn late">Atrasado</button></td>
+                            <td data-label="Ações">
+                                <i class="edit bi bi-pencil-fill"></i>
+                                <i class="book bi bi-file-check-fill"></i>
+                                <i class="trash bi bi-trash3-fill"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="bottom-field">
+                    <ul class="pagination">
+                        <li class="prev"> <a href="#" id="prev"></a></li>
+                        <li class="list"> <a href="#">01</a></li>
+                        <li class="list"> <a href="#">02</a></li>
+                        <li class="list"> <a href="#">03</a></li>
+                        <li class="next"> <a href="#" id="next"></a></li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+    <script src="/Projeto-fixpay-leonardo/sidebar/sidebar.js"></script>
+    <script src="/Projeto-fixpay-leonardo/JS/alugueis.js"></script>
+</body>
+
+</html>
