@@ -9,8 +9,7 @@
     <title>Alugueis | Biblioteca FP</title>
     <!--icone--->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="shortcut icon" type="imagex/png"
-        href="/Imagens/biblioteca-fixpay-website-favicon-color_04_.ico">
+    <link rel="shortcut icon" type="imagex/png" href="/Imagens/biblioteca-fixpay-website-favicon-color_04_.ico">
     <!--css--->
     <link rel="stylesheet" href="/CSS/alugueis.css">
 
@@ -23,8 +22,7 @@
         <header>
             <div class="image-text">
                 <span class="image">
-                    <img src="/Imagens/biblioteca-fixpay-website-favicon-color_04_.ico"
-                        alt="logo">
+                    <img src="/Imagens/biblioteca-fixpay-website-favicon-color_04_.ico" alt="logo">
                 </span>
 
                 <div class="text header-text">
@@ -79,72 +77,71 @@
     </nav>
 
 
-<!--Menu responsivo-->
+    <!--Menu responsivo-->
 
-  <button class="button-mobile" onclick="iconMenu()">
-    <i class="bi bi-list"></i>
-    <span></span>
-  </button>
-
-
-
-
-
-<nav class="menu-mobile" id="menu-mobile">
-    
-    <button class="close-button" onclick="iconMenu()">
-        <span><i class="bi bi-x-circle-fill"></i></span>
+    <button class="button-mobile" onclick="iconMenu()">
+        <i class="bi bi-list"></i>
+        <span></span>
     </button>
 
-    <button>
-        <span>
-            <i class="bi bi-columns-gap icon"></i>
-            <span class="mobile-text"><a href="/HTML/Dashboard.html">Dashboard</a></span>
-        </span>
-    </button>
 
-    <button>
-        <span>
-            <i class="bi bi-journal-bookmark-fill icon"></i>
-           <span class="mobile-text"> <a href="/HTML/Alugueis.html">Alugueis</a></span>
-        </span>
-    </button>
 
-    <button>
-        <span>
-            <i class="bi bi-box-arrow-left icon"></i>
-            <span  class="mobile-text"><a href="">Logout</a></span>
-        </span>
-    </button>
-</nav>
+
+
+    <nav class="menu-mobile" id="menu-mobile">
+
+        <button class="close-button" onclick="iconMenu()">
+            <span><i class="bi bi-x-circle-fill"></i></span>
+        </button>
+
+        <button>
+            <span>
+                <i class="bi bi-columns-gap icon"></i>
+                <span class="mobile-text"><a href="/HTML/Dashboard.html">Dashboard</a></span>
+            </span>
+        </button>
+
+        <button>
+            <span>
+                <i class="bi bi-journal-bookmark-fill icon"></i>
+                <span class="mobile-text"> <a href="/HTML/Alugueis.html">Alugueis</a></span>
+            </span>
+        </button>
+
+        <button>
+            <span>
+                <i class="bi bi-box-arrow-left icon"></i>
+                <span class="mobile-text"><a href="">Logout</a></span>
+            </span>
+        </button>
+    </nav>
 
     <!--toda a main de alugueis-->
 
-   <main>
+    <main>
         <div class="table-container">
             <div class="main-title">ALUGUÉIS
                 <a href="/HTML/modal.html fixpay/Formulario.html"><i class="bi bi-plus-circle-fill add-icone"></i> </a>
             </div>
 
 
-            <section class="cabecalho">
-                <div class="itens-controller">
-                    <h5>SHOW</h5>
-                    <select>
-                        <option value="04">01</option>
-                        <option value="05">02</option>
-                        <option value="08">03</option>
-                        <option value="10">04</option>
-                        <option value="15">05</option>
+            <section class="header">
+                <div class="items-controller">
+                    <h5>Mostrar</h5>
+                    <select name="" id="itemperpage">
+                        <option value="1">01</option>
+                        <option value="2">02</option>
+                        <option value="3" selected>03</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
                     </select>
-                    <h5>PER PAGE</h5>
+                    <h5>Por Página</h5>
                 </div>
                 <div class="search">
-                    <h5>SEARCH</h5>
-                    <input type="text" name="" placeholder="Search">
+                    <h5>Procurar</h5>
+                    <input type="text" name="" id="search" placeholder="Digite Aqui">
                 </div>
             </section>
-
             <section class="field">
                 <table class="table">
                     <thead>
@@ -204,11 +201,9 @@
                 </table>
                 <div class="bottom-field">
                     <ul class="pagination">
-                        <li class="prev"> <a href="#" id="prev"></a></li>
-                        <li class="list"> <a href="#">01</a></li>
-                        <li class="list"> <a href="#">02</a></li>
-                        <li class="list"> <a href="#">03</a></li>
-                        <li class="next"> <a href="#" id="next"></a></li>
+                        <li class="prev"><a href="#" id="prev">&#139;</a></li>
+                        <!-- page number here -->
+                        <li class="next"><a href="#" id="next">&#155;</a></li>
                     </ul>
                 </div>
             </section>

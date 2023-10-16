@@ -386,29 +386,8 @@ main {
     align-items: center;
 }
 
-.itens-controller,
-.search {
-    display: flex;
-    /* Define um layout flexível */
-    align-items: center;
-    /* Alinha os itens verticalmente */
-}
-
-/*botao da filtragem*/
-.bottom-field {
-    width: 100%;
-    padding: 20px;
-    margin-top: 20px;
-}
 
 
-.itens-controller h5,
-.search h5,
-.itens-controller select,
-.search input {
-    margin-right: 10px;
-    /* Ajuste o valor conforme necessário */
-}
 
 /*botao de adiconar*/
 .add-btn {
@@ -505,44 +484,6 @@ select {
 }
 
 
-/*responsividade da tabela*/
-@media(max-width: 855px) {
-    .table thead {
-        display: none;
-        /*caeçalho vai sumir quando a tela tiver essa largura*/
-    }
-
-    .table,
-    .table tbody,
-    .table tr,
-    .table td {
-        display: block;
-        width: 100%;
-    }
-
-    .table tr {
-        margin-bottom: 15px;
-    }
-
-    .table td {
-        text-align: right;
-        padding-left: 50%;
-        text-align: right;
-        position: relative;
-    }
-
-    .table td::before {
-        content: attr(data-label);
-        /*puxando  data label*/
-        position: absolute;
-        left: 0;
-        width: 50%;
-        padding-left: 15px;
-        font-size: 15px;
-        font-weight: bold;
-        text-align: left;
-    }
-}
 
 .add-icone {
     color: #13508d;
@@ -579,14 +520,14 @@ pendente*/
     background-color: #f9de45;
 }
 
-/*paginaçao*/
-.pagination {
+/*paginaçao/////////////////////*/
+.pagination{
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.pagination li {
+    margin-top: 8px;
+  }
+  .pagination li{
     list-style: none;
     padding: 2px;
     margin: 10px;
@@ -595,6 +536,55 @@ pendente*/
     border-radius: 5px;
     border: 1px solid #999;
     color: #999;
+  }
+  .pagination li.active{
+    background: #00bfff;
+    color: white;
+    border-color: #00bfff;
+
+  }
+  .pagination li a{
+    text-decoration: none;
+    padding: 3px 8px;
+    color: inherit;
+    display: block;
+    font-family: sans-serif;
+    font-size: 13px;
+  }
+.header{
+    width: 90%;
+    height: 100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.items-controller,
+.search{
+    flex-shrink: 0;
+    display: flex;
+    align-content: center;
+    align-items: center;
+
+}
+select{
+     padding: 2px;
+    margin: 0 10px;
+       outline: none;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+}
+.search > input{
+    padding: 8px;
+    margin: 0 0 0 20px;
+border-radius: 3px;
+
+}
+.field{
+    width: 90%;
+    height: auto;
+    margin: auto;
 }
 
 
@@ -628,5 +618,45 @@ pendente*/
     
     .header-mobile{
         display: block;
+    }
+}
+
+
+/*responsividade da tabela*/
+@media(max-width: 770px) {
+    .table thead {
+        display: none;
+        /*caeçalho vai sumir quando a tela tiver essa largura*/
+    }
+
+    .table,
+    .table tbody,
+    .table tr,
+    .table td {
+        display: block;
+        width: 100%;
+    }
+
+    .table tr {
+        margin-bottom: 15px;
+    }
+
+    .table td {
+        text-align: right;
+        padding-left: 50%;
+        text-align: right;
+        position: relative;
+    }
+
+    .table td::before {
+        content: attr(data-label);
+        /*puxando  data label*/
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-size: 15px;
+        font-weight: bold;
+        text-align: left;
     }
 }

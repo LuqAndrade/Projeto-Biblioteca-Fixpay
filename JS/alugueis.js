@@ -1,77 +1,119 @@
 var tbody = document.querySelector("tbody");
-var pageU1 = document.querySelector(".pagination");
-var itemShow = document.querySelector("#itemperpage");
-var tr = tbody.querySelectorAll("tr");
-var emptyBox = [];
-var index = 1;
-var itemParPage = 6;
+		var pageUl = document.querySelector(".pagination");
+		var itemShow = document.querySelector("#itemperpage");
+		var tr = tbody.querySelectorAll("tr");
+		var emptyBox = [];
+		var index = 1;
+		var itemPerPage = 8;
 
-for (let i = 0; i < tr.length; i++) {
-    emptyBox.push(tr[i]);
-}
+		for(let i=0; i<tr.length; i++){ emptyBox.push(tr[i]);}
 
-itemShow.onchange = giveTrPerPage;
+		itemShow.onchange = giveTrPerPage;
+		function giveTrPerPage(){
+			itemPerPage = Number(this.value);
+			// console.log(itemPerPage);
+			displayPage(itemPerPage);
+			pageGenerator(itemPerPage);
+			getpagElement(itemPerPage);
+		}
 
-function giveTrPerPage() {
-    itemParPage = Number(this.value);
-    displayPage(itemParPage);
-}
+		function displayPage(limit){
+			tbody.innerHTML = '';
+			for(let i=0; i<limit; i++){
+				tbody.appendChild(emptyBox[i]);
+			}
+			const  pageNum = pageUl.querySelectorAll('.list');
+			pageNum.forEach(n => n.remove());
+		}
+		displayPage(itemPerPage);
 
-function displayPage(limit) {
-    tbody.innerHTML = '';
-    for (let i = 0; i < limit; i++) {
-        tbody.appendChild(emptyBox[i]);
-    }
-}
+		function pageGenerator(getem){
+			const num_of_tr = emptyBox.length;
+			if(num_of_tr <= getem){
+				pageUl.style.display = 'none';
+			}else{
+				pageUl.style.display = 'flex';
+				const num_Of_Page = Math.ceil(num_of_tr/getem);
+				for(i=1; i<=num_Of_Page; i++){
+					const li = document.createElement('li'); li.className = 'list';
+					const a =document.createElement('a'); a.href = '#'; a.innerText = i;
+					a.setAttribute('data-page', i);
+					li.appendChild(a);
+					pageUl.insertBefore(li,pageUl.querySelector('.next'));
+				}
+			}
+		}
+		pageGenerator(itemPerPage);
+		let pageLink = pageUl.querySelectorAll("a");
+		let lastPage =  pageLink.length - 2;
+		
+		function pageRunner(page, items, lastPage, active){
+			for(button of page){
+				button.onclick = e=>{
+					const page_num = e.target.getAttribute('data-page');
+					const page_mover = e.target.getAttribute('id');
+					if(page_num != null){
+						index = page_num;
 
-displayPage(itemParPage);
+					}else{
+						if(page_mover === "next"){
+							index++;
+							if(index >= lastPage){
+								index = lastPage;
+							}
+						}else{
+							index--;
+							if(index <= 1){
+								index = 1;
+							}
+						}
+					}
+					pageMaker(index, items, active);
+				}
+			}
 
-function pageGenerator(getem){
-    const num_of_tr = emptyBox.length;
-    if (num_of_tr <= getem ){
-        pageU1.style.display = 'none';
-    }
-    else {
-        pageU1.style.display = 'flex';
-        const num_of_page = Math.ceil(num_of_tr/getem);
-        for(let i=1; i<num_of_page; i++){
-            const li = document.createElement('li');
-            li.className = 'list';
-            const a = document.createElement('a');
-            a.href = "#";
-            a.innerText = i;
-            a.setAttribute('data-page', i);
-            li.appendChild(a);
-            pageU1.insertBefore(li, pageU1.querySelector("next"));
-        }
-    }
-}
-pageGenerator(itemParPage);
+		}
+		var pageLi = pageUl.querySelectorAll('.list'); pageLi[0].classList.add("active");
+		pageRunner(pageLink, itemPerPage, lastPage, pageLi);
+
+		function getpagElement(val){
+			let pagelink = pageUl.querySelectorAll("a");
+			let lastpage =  pagelink.length - 2;
+			let pageli = pageUl.querySelectorAll('.list');
+			pageli[0].classList.add("active");
+			pageRunner(pagelink, val, lastpage, pageli);
+			
+		}
+	
+		
+		
+		function pageMaker(index, item_per_page, activePage){
+			const start = item_per_page * index;
+			const end  = start + item_per_page;
+			const current_page =  emptyBox.slice((start - item_per_page), (end-item_per_page));
+			tbody.innerHTML = "";
+			for(let j=0; j<current_page.length; j++){
+				let item = current_page[j];					
+				tbody.appendChild(item);
+			}
+			Array.from(activePage).forEach((e)=>{e.classList.remove("active");});
+     		activePage[index-1].classList.add("active");
+		}
 
 
-//sidebar
-/*este comando guardou todos os elemntos que tem a classe item-menu*/
-var menuItem = document.querySelectorAll('.item-menu')
 
-/*criando uma função que deixa o botão selecionado sozinho*/
-function selectLink() {
-    /**vamos usar o for each : serve para fazer uma varredura nos nossos arrays*/
-    /*abaixo fizemos uma arrow function : As arrow functions permitem ter um retorno implícito, que são valores retornados sem ter que usar a palavar return.*/
-    /*este itemm criado é o li itens do html*/menuItem.forEach((item) =>
-    item.classList.remove('ativo')) /*remover uma classe de um elemento */
-    /*adicionando a classe ativo quando eu clicar no item*/
-    this.classList.add('ativo')
-}
 
-/*vamos criar um escutador de eventos,para que ele "escute" quando alguem clicar em algum item */
-menuItem.forEach((item) =>
-    item.addEventListener('click', selectLink) /*chamando a função que criei la em cima*/
-)
 
-//expandir menu
-var btnExp = document.querySelector('#btn-exp')
-var menuSide = document.querySelector('.menu-lateral')
-
-btnExp.addEventListener('click', function () {
-    menuSide.classList.toggle('expandir')
-})
+		// search content 
+		var search = document.getElementById("search");
+		search.onkeyup = e=>{
+			const text = e.target.value;
+			for(let i=0; i<tr.length; i++){
+				const matchText = tr[i].querySelectorAll("td")[2].innerText;
+				if(matchText.toLowerCase().indexOf(text.toLowerCase()) > -1){
+					tr[i].style.visibility = "visible";
+				}else{
+					tr[i].style.visibility= "collapse";
+				}
+			}
+		}
