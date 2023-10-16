@@ -192,9 +192,7 @@ body.dark .sidebar li a:hover .text {
     color: var(--text-color);
 }
 
-
 .sidebar .menu-bar {
-
     height: calc(100% - 70px);
     display: flex;
     flex-direction: column;
@@ -215,7 +213,6 @@ body.dark .menu-bar .mode i.sun {
 body.dark .menu-bar .mode i.moon {
     opacity: 0;
 }
-
 
 .menu-bar .mode i {
     position: absolute;
@@ -345,10 +342,7 @@ body.dark .switch::before {
 .close-button:hover{
    color:#00bfff;
    transition:0.4s
-
 }
-
-
 
 /*conteudo principal*/
 main {
@@ -368,12 +362,10 @@ main {
     padding: 8px 40px;
 }
 
-
 .table-container {
     background: #fff;
     padding: 2rem;
     border-radius: 10px;
-
 }
 
 /*Paginaçao acima,  input de pesquisar//////////////////////////////////////*/
@@ -386,9 +378,6 @@ main {
     align-items: center;
 }
 
-
-
-
 /*botao de adiconar*/
 .add-btn {
     color: #13508d;
@@ -398,14 +387,12 @@ main {
     color: #1374d5;
 }
 
-
 section[cabecalho] {
     display: flex;
     /* Define um layout flexível */
     align-items: center;
     /* Alinha os itens verticalmente */
 }
-
 
 select {
     padding: 2px;
@@ -415,8 +402,6 @@ select {
     cursor: pointer;
     background: transparent;
 }
-
-
 
 /*tabela inteira*/
 .table-content {
@@ -483,12 +468,9 @@ select {
     margin-bottom: 8px;
 }
 
-
-
 .add-icone {
     color: #13508d;
     cursor: pointer;
-
 }
 
 .add-icone:hover {
