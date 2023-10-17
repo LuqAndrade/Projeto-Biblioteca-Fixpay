@@ -618,7 +618,23 @@ select {
     margin: auto;
 }
 
+/*modal*/
+.modal-form-add,.modal-form-edit{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50% -50%);
+    background: #FFF;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, .2);
+    visibility: hidden;
+    transition: .5s;
+}
 
+.form{
+    width: 500px;
+    padding: 20px 50px;
+}
 /*responsividade do menu*/
 
 @media (max-width: 550px) {
@@ -654,7 +670,7 @@ select {
 
 
 /*responsividade da tabela*/
-@media(max-width: 770px) {
+@media(max-width: 875px) {
     .table thead {
         display: none;
         /*caeçalho vai sumir quando a tela tiver essa largura*/
