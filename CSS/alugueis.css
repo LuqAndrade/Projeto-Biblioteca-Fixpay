@@ -317,6 +317,14 @@ body.dark .switch::before {
 }
 
 /*menu responsivo*/
+
+.header-responsive{
+    background: #38d39f;
+    width: 100%;
+position: fixed;
+    
+}
+
 .button-mobile {
     display: none;
     align-items: flex-start;
@@ -324,7 +332,8 @@ body.dark .switch::before {
     margin: 16px;
     cursor: pointer;
     font-size: 20px;
-    color: #18191A;
+    color: #fff;
+    background: none;
     border: 0;
 
 }
@@ -332,7 +341,7 @@ body.dark .switch::before {
 .menu-mobile-active {
     width: 100%;
     height: 100%;
-    background-color: #13508d;
+    background-color: #38d39f;
     z-index: 99;
     position: fixed;
     top: 0;
@@ -351,6 +360,7 @@ body.dark .switch::before {
     color: #FFF;
     margin-bottom: 16px;
 }
+
 
 .mobile-text {
     text-decoration: none;
@@ -381,14 +391,13 @@ body.dark .switch::before {
 }
 
 .close-button:hover {
-    color: #00bfff;
+    color: #13508d
     transition: 0.4s
 }
 
 /*conteudo principal*/
 main {
     position: relative;
-    background: #ebe9e9;
     padding: 1rem;
     left: 250px;
     height: 100vh;
@@ -620,7 +629,7 @@ select {
 
 /*modal*/
 .modal-form-add,.modal-form-edit{
-    position: absolute;
+   
     top: 45%;
     left: 50%;
     transform: translate(-50% -50%);
@@ -634,6 +643,11 @@ select {
 .form{
     width: 500px;
     padding: 20px 50px;
+}
+
+.form .close{
+    text-align: right;
+    cursor: pointer;
 }
 /*responsividade do menu*/
 
@@ -706,4 +720,17 @@ select {
         font-weight: bold;
         text-align: left;
     }
+
+    section.header{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+
+  .table-container{
+  
+  
+  }
+
+  
 }
