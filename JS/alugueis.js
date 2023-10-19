@@ -120,20 +120,19 @@ var tbody = document.querySelector("tbody");
 			}
 		}
 
-        /*modal de editar*/
-        const openModalButton = document.querySelector("#open-modal");  /*botao de abrir o modal*/
-        const closeModalButton = document.querySelector("#close-modal");  /*botao de fechar o modal */
-        const modal = document.querySelector("#modal");  /*modal em si*/
-        const fade = document.querySelector("#fade");  /*background transparente */
+       //modais 
+		const getElement =(...queries) =>document.querySelector(...queries);
 
-const toggleModal = () =>{
-    modal.classList.toggle("hide");
-    fade.classList.toggle("hide");
-}
+		const button = getElement('.open-modal-button');
+		const container = getElement('.modal-container');
+		const modal = getElement('.modal');
 
-        //criaremos um array agora
-        [openModalButton, closeModalButton, fade].forEach((el) => {
-            el.addEventListener("click" , () => toggleModal());
-        })
+		const activeModalClass = 'modal-show';
 
-        
+		const openModal = () => container.classList.add('activeModalClass');
+		const closeModal = () => {};
+
+		button.addEventListener('click', () => {
+			console.log('entrou')
+		});
+		

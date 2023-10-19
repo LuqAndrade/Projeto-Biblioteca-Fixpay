@@ -321,7 +321,9 @@ body.dark .switch::before {
 .header-responsive{
     background: #38d39f;
     width: 100%;
-position: fixed;
+   position: fixed;
+   z-index: 1;
+
     
 }
 
@@ -391,8 +393,8 @@ position: fixed;
 }
 
 .close-button:hover {
-    color: #13508d
-    transition: 0.4s
+    color: #13508d;
+    transition: 0.4s;
 }
 
 /*conteudo principal*/
@@ -628,26 +630,31 @@ select {
 }
 
 /*modal*/
-.modal-form-add,.modal-form-edit{
-   
-    top: 45%;
-    left: 50%;
-    transform: translate(-50% -50%);
+.modal-container{
+    background: rgba(0, 0, 0, 0.2);
+    position: fixed;
+    left: 0; /*sempre que passar para o lado , ele vai acompanhando a tela e ficando no meio*/
+    top: 0;
+  
+    pointer-events: none;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100vh; /*usamos isso porque a tela tem um scroll vertical*/
+}
+
+.modal{
     background: #FFF;
-    border-radius: 10px;
-    box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, .2);
-    visibility: hidden;
-    transition: .5s;
+    width: 450px;
+    height: 250px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 #00000070;
 }
 
-.form{
-    width: 500px;
-    padding: 20px 50px;
-}
-
-.form .close{
-    text-align: right;
-    cursor: pointer;
+.modal-show{
+    opacity: 1;
+    pointer-events: auto;
 }
 /*responsividade do menu*/
 
@@ -671,10 +678,13 @@ select {
 
     .table-container {
         background-color: none;
+        margin-top: 55px;
+       
     }
 
     main {
-        margin-left: -45px;
+        margin-left: -50px;
+        
     }
 
     .header-mobile {
@@ -726,11 +736,6 @@ select {
         flex-direction: column;
         margin-bottom: 10px;
     }
-
-  .table-container{
-  
-  
-  }
 
   
 }
