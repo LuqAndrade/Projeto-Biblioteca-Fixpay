@@ -278,53 +278,16 @@ body.dark .switch::before {
 /*FINAL DA SIDEBAR*/
 
 
-/*modais*/
-#fade {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    z-index: 5;
-}
-
-#modal {
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    z-index: 10;
-    background-color: #fff;
-    transform: translate(-50%, -50%);
-    width: 500px;
-    max-width: 90%;
-    padding: 1.2rem;
-
-}
-
-#modal.hide,
-#fade.hide {
-    opacity: 0;
-}
-
-.modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #CCC;
-    margin-bottom: 1rem;
-    padding-bottom: 1rem;
-}
 
 /*menu responsivo*/
 
-.header-responsive{
-    background: #38d39f;
+.header-responsive {
+    background: #1374d5;
     width: 100%;
-   position: fixed;
-   z-index: 1;
+    position: fixed;
+    z-index: 1;
 
-    
+
 }
 
 .button-mobile {
@@ -343,7 +306,7 @@ body.dark .switch::before {
 .menu-mobile-active {
     width: 100%;
     height: 100%;
-    background-color: #38d39f;
+    background-color: #1374d5;
     z-index: 99;
     position: fixed;
     top: 0;
@@ -393,7 +356,7 @@ body.dark .switch::before {
 }
 
 .close-button:hover {
-    color: #13508d;
+    color: #18191A;
     transition: 0.4s;
 }
 
@@ -629,33 +592,104 @@ select {
     margin: auto;
 }
 
-/*modal*/
-.modal-container{
+/*modal adicionar**/
+.modal-container {
+    width: 100%;
+    /*para ele cobrir a tela inteira*/
+    height: 100vh;
+    /*para cobrir a altura inteira */
+
     background: rgba(0, 0, 0, 0.2);
+    /*para a tela ficar cinza*/
     position: fixed;
-    left: 0; /*sempre que passar para o lado , ele vai acompanhando a tela e ficando no meio*/
+    /*para ficar preso*/
+    /*para ficar sempre fixo no mesmo lugar da esquarda e do topo da tela*/
     top: 0;
-  
-    pointer-events: none;
+    left: 0;
+
     display: grid;
     place-items: center;
-    width: 100%;
-    height: 100vh; /*usamos isso porque a tela tem um scroll vertical*/
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 0.15s;
 }
 
-.modal{
+.modal {
     background: #FFF;
-    width: 450px;
-    height: 250px;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 0 #00000070;
+    width: 0px;
+    height: 0px;
+
+    padding: 15px;/*afastar o conteudo das bordas*/ border-radius: 7px;
+    box-shadow: 0 0 10px 0 #00000070;
+    /*os numeros significam a posiçao daa sombra */
+
+    overflow: hidden;
+    transition: width 0.15s, height 0.15s;
 }
 
-.modal-show{
+.modal-show>.modal {
+
+    width: 500px;
+    /*para ele cobrir a tela inteira*/
+    height: 450px;
+    /*para cobrir a altura inteira */
+
+}
+
+/*nova classe*/
+.modal-show {
     opacity: 1;
     pointer-events: auto;
 }
+
+
+
+.modal-header {
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 500;
+    text-align: center;
+}
+
+.form-modal {
+    margin: 30px;
+}
+
+.form-modal .input-modal {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.input-modal label {
+    color: #333;
+}
+
+.form-modal .input-modal input {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    outline: none;
+    font-size: 1rem;
+    margin-top: 8px;
+    color: #707070;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0 15px;
+}
+
+.colum {
+    display: flex;
+    column-gap: 15px;
+}
+
+@media screen and (max-width: 500px) {
+    .colum {
+        flex-wrap: wrap;
+    }
+}
+
 /*responsividade do menu*/
 
 @media (max-width: 550px) {
@@ -679,12 +713,12 @@ select {
     .table-container {
         background-color: none;
         margin-top: 55px;
-       
+
     }
 
     main {
         margin-left: -50px;
-        
+
     }
 
     .header-mobile {
@@ -731,11 +765,13 @@ select {
         text-align: left;
     }
 
-    section.header{
+    section.header {
         display: flex;
         flex-direction: column;
         margin-bottom: 10px;
     }
 
-  
+.main-title{
+   margin-left: 40px;
+}
 }

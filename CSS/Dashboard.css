@@ -62,12 +62,13 @@ body.dark .sidebar header .toggle {
     min-width: 60px;
     display: flex;
     align-items: center;
-   justify-content: center;
+    justify-content: center;
 }
 
-.sidebar .menu{
+.sidebar .menu {
     margin-top: 35px;
 }
+
 /*sidebar em si*/
 .sidebar {
     box-shadow: 20px;
@@ -199,7 +200,7 @@ body.dark .sidebar li a:hover .text {
     background: var(--primary-color-light);
 }
 
-body.dark .menu-bar .mode i.sun{
+body.dark .menu-bar .mode i.sun {
     opacity: 1;
 }
 
@@ -267,8 +268,8 @@ body.dark .switch::before {
 
 
 
-.sidebar.close ~ .main-content {
-   left: 88px;
+.sidebar.close~.main-content {
+    left: 88px;
     width: calc(100% - 88px);
 }
 
@@ -276,202 +277,228 @@ body.dark .switch::before {
 
 /*main*/
 /*corpo da main dashboard*/
-.main-content{
+.main-content {
     position: relative;
     background: #ebe9e9;
     padding: 1rem;
     left: 250px;
     height: 100vh;
     width: calc(100% - 250px);
-    }
-    
-    /*cabeçalho*/
-    .header-wrapper{
-        align-items: center;
-        display: flex;
-        justify-content: space-between;
-       
-       
-        padding: 10px 20px;
-        margin-bottom: 1rem;
-    }
-    
-    .header-title{
-        color: #1374d5;
-    }
-    
-    /*card container*/
-    .card-container{
-        background: #fff;
-        padding: 2rem;
-        border-radius: 10px;
-    
-    }
-    .card-wrapper{
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12rem;
-    }
-    
-    .main-title{
-        color: #1374d5;
-        font-size: 18px;
-        margin-bottom: 8px;
-    }
-    
-    .payment-card{
-        background: #20b2aa;
-        border-radius: 10px;
-        padding: 1.2rem;
-        width: 250px;
-        height: 150px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        transition:all 0.5s ease-in-out ;
-    }
-    
-    .payment-card:hover{
-        transform: translateY(-5px);
-    }
-    
-    .card-header{
-        display: flex;
-        justify-content: space-between;align-items: center;
-        margin-bottom: 20px;
-    }
-    
-    .amount{
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .title{
-        font-size: 20px;
-        font-weight: 450;
-    }
-    .amount-value{
-        font-size: 24px;
-        font-weight: 600;
-       
-    }
-    
-    .icone-card{
-        box-shadow: 20px;
-        padding: 1rem;
-        text-align: center;
-        color: #20b2aa;
-        height: 50px;
-        width: 50px;
-        border-radius: 50%;
-        font-size: 1.2rem;
-        background: #fff;
-    }
-    
-    
-    /*tabela inteira*/
-    .table {
-        border-collapse: collapse;
-        width: 100%;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    
-    /*colunas da tabela*/
-    .table td,
-    .table th {
-    
-        padding: 25px 10px;
-        text-align: center;
-        font-size: 16px;
-    }
-    
-    .table th {
-        background-color: #13508d;
-        color: #ffffff;
-    }
-    
-    .table tbody tr:nth-child(even) {
-        background-color: #f5f5f5;
-    }
-    
-    /*editar*/
-    .edit {
-        color: blue;
-    }
-    
-    /*apagar*/
-    .trash {
-        color: red;
-    }
-    
-    /*devolver*/
-    .book {
-        color: green;
-    }
-    
-    /*atrasado,no prazo, pendente*/
-    .status-btn {
-        width: 120px;
-        /* Define a largura do botão */
-        height: 40px;
-        /* Define a altura do botão */
-        border-radius: 20px;
-        border: none;
-        font-weight: bold;
-    }
-    
-    
-    
-    /*responsividade da tabela*/
-    @media(max-width: 620px) {
-        .table thead {
-            display: none;
-            /*caeçalho vai sumir quando a tela tiver essa largura*/
-        }
-    
-        .table,
-        .table tbody,
-        .table tr,
-        .table td {
-            display: block;
-            width: 100%;
-        }
-    
-        .table tr {
-            margin-bottom: 15px;
-        }
-    
-        .table td {
-            text-align: right;
-            padding-left: 50%;
-            text-align: right;
-            position: relative;
-        }
-    
-        .table td::before {
-            content: attr(data-label);
-            /*puxando  data label*/
-            position: absolute;
-            left: 0;
-            width: 50%;
-            padding-left: 15px;
-            font-size: 15px;
-            font-weight: bold;
-            text-align: left;
-        }
-    }
-    
-    
-    .new-users{
-        background-color: #fff;
-        margin-top: 1rem;
-        border-radius: 10px;
-        padding: 2rem;
-    }
-    /*tabela de usuarios*/
-    .table-container{
-        width: 35%;
-       
+}
+
+/*cabeçalho*/
+.header-wrapper {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+
+    padding: 10px 20px;
+    margin-bottom: 1rem;
+}
+
+.header-title {
+    color: #1374d5;
+}
+
+/*card container*/
+.card-container {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+
+}
+
+.card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12rem;
+}
+
+.main-title {
+    color: #1374d5;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.payment-card {
+    background: #20b2aa;
+    border-radius: 10px;
+    padding: 1.2rem;
+    width: 250px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.5s ease-in-out;
+}
+
+.payment-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.amount {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 450;
+}
+
+.amount-value {
+    font-size: 24px;
+    font-weight: 600;
+
+}
+
+.icone-card {
+    box-shadow: 20px;
+    padding: 1rem;
+    text-align: center;
+    color: #20b2aa;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    background: #fff;
+}
+
+
+/*tabela inteira*/
+.table {
+    border-collapse: collapse;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/*colunas da tabela*/
+.table td,
+.table th {
+
+    padding: 25px 10px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.table th {
+    background-color: #13508d;
+    color: #ffffff;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+/*editar*/
+.edit {
+    color: blue;
+}
+
+/*apagar*/
+.trash {
+    color: red;
+}
+
+/*devolver*/
+.book {
+    color: green;
+}
+
+/*atrasado,no prazo, pendente*/
+.status-btn {
+    width: 120px;
+    /* Define a largura do botão */
+    height: 40px;
+    /* Define a altura do botão */
+    border-radius: 20px;
+    border: none;
+    font-weight: bold;
+}
+
+
+/*grafico*/
+.graphBox {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 30px;
+    min-height: 200px;
+}
+
+.graphBox .box {
+    background: #fff;
+    position: relative;
+    padding: 20px;
+    width: 100%;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+}
+
+/*responsividade da tabela*/
+@media(max-width: 620px) {
+    .table thead {
+        display: none;
+        /*caeçalho vai sumir quando a tela tiver essa largura*/
     }
 
-    
+    .table,
+    .table tbody,
+    .table tr,
+    .table td {
+        display: block;
+        width: 100%;
+    }
+
+    .table tr {
+        margin-bottom: 15px;
+    }
+
+    .table td {
+        text-align: right;
+        padding-left: 50%;
+        text-align: right;
+        position: relative;
+    }
+
+    .table td::before {
+        content: attr(data-label);
+        /*puxando  data label*/
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-size: 15px;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    .graphBox{
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+}
+
+
+.new-users {
+    background-color: #fff;
+    margin-top: 1rem;
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+/*tabela de usuarios*/
+.table-container {
+    width: 35%;
+
+}
