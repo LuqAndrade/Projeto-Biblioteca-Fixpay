@@ -1,22 +1,21 @@
-var ctx = document.getElementById('myChart').getContext('2d');
+const ctx = document.getElementById('topLivros');
 
-var myChart = new Chart (ctx, {
-    type: 'bar',
-    data: {
-       labels: ['vermelho','azul','amarelo','verde','roxo','laranja'],
-       datasets: [{
-label: '# of Votes',
-data:[12,19,3,5,2,3],
-
-backgroundColor: [
-    'rgba(255, 99, 132, 0.2)',
-    'rgba(54, 162, 235, 0.2)',
-    'rgba(255, 99, 132, 0.2)',
-    'rgba(255, 99, 132, 0.2)',
-    'rgba(255, 99, 132, 0.2)',
-    'rgba(255, 99, 132, 0.2)',
-]
-
-       }]
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    datasets: [{
+      label: 'Top 6 Livros Mais Alugados',
+      data: [12, 19, 3, 5, 2, 3], //quantidade de livros
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
     }
-})
+  }
+});
+
