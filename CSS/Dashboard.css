@@ -319,6 +319,19 @@ body.dark .switch::before {
     color: #1374d5;
     font-size: 18px;
     margin-bottom: 8px;
+ 
+}
+
+.box h2 {
+    color: #1374d5;
+}
+
+.title-graf{
+    display: flex;
+}
+
+title-graf .little-book{
+align-items: center;
 }
 
 .payment-card {
